@@ -1,0 +1,13 @@
+interface ContainerProps {
+  children: React.ReactNode;
+  className?: string;
+  id?: string;
+}
+
+export default function Container({ children, className = '', id }: ContainerProps) {
+  return (
+    <div className={`container-custom ${className}`} id={id}>
+      {children}
+    </div>
+  );
+}

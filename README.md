@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Agronom Website - Next.js Project
 
-## Getting Started
+Modern agricultural information and management platform for crop management, soil analysis, weather monitoring, and farming resources.
 
-First, run the development server:
+## Quick Start
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+agronom-website/
+├── app/                  # Next.js App Router pages
+│   ├── layout.tsx       # Root layout
+│   ├── page.tsx         # Home page
+│   └── api/             # API routes
+├── components/          # Reusable React components
+│   ├── ui/             # UI components (buttons, cards, etc.)
+│   └── features/       # Feature components
+├── lib/                # Utility functions
+├── public/             # Static assets
+└── styles/             # Global styles
+```
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ TypeScript for type safety
+- ✅ Tailwind CSS for modern styling
+- ✅ ESLint for code quality
+- ✅ Git version control
+- ✅ App Router (Next.js 14+)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Create a `.env.local` file:
 
-## Deploy on Vercel
+```
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+NEXT_PUBLIC_SITE_NAME=Agronom
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Available Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+
+## Build & Deploy
+
+```bash
+npm run build
+npm start
+```
+
+## Technology Stack
+
+- **Framework:** Next.js 15+ with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Database:** (TBD - PostgreSQL / MongoDB)
+- **API:** (TBD - REST / GraphQL)
+- **Deployment:** (TBD - Vercel / Docker)
+
+## Getting Started with Development
+
+1. Create feature branches from `main`
+2. Use TypeScript for all new code
+3. Follow Tailwind CSS utility classes for styling
+4. Keep components small and reusable
+5. Write meaningful commit messages
+
+## License
+
+TBD
