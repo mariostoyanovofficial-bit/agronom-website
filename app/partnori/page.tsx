@@ -7,14 +7,8 @@ import { PARTNORI } from "@/lib/partnori-data";
 export default function PartnoriPage() {
   return (
     <MainLayout>
-      <div
-        style={{
-          backgroundColor: "#f8fafc",
-          minHeight: "100vh",
-          padding: "72px 0 104px",
-        }}
-      >
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+      <div className="page-shell">
+        <div className="page-container">
           {/* Breadcrumb */}
           <nav
             style={{
@@ -83,16 +77,7 @@ export default function PartnoriPage() {
           </p>
 
           {/* Logo grid */}
-          <ul
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-              gap: 20,
-              listStyle: "none",
-              padding: 0,
-              margin: 0,
-            }}
-          >
+          <ul className="partnori-grid">
             {PARTNORI.map((p, i) => {
               const card = (
                 <div

@@ -62,14 +62,8 @@ export default async function UslugaPage({
 
   return (
     <MainLayout>
-      <div
-        style={{
-          backgroundColor: "#f8fafc",
-          minHeight: "100vh",
-          padding: "72px 0 104px",
-        }}
-      >
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+      <div className="page-shell">
+        <div className="page-container">
           {/* Breadcrumb */}
           <nav
             style={{
@@ -98,14 +92,7 @@ export default async function UslugaPage({
             <span style={{ color: "#374151" }}>{usluga.title}</span>
           </nav>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "minmax(0,1fr) 300px",
-              gap: 48,
-              alignItems: "start",
-            }}
-          >
+          <div className="usluga-layout">
             {/* Main */}
             <div>
               <p
@@ -543,7 +530,7 @@ export default async function UslugaPage({
             </div>
 
             {/* Sidebar — other services in category */}
-            <aside style={{ position: "sticky", top: 96 }}>
+            <aside className="usluga-aside">
               <div
                 style={{
                   backgroundColor: "#ffffff",

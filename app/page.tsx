@@ -214,10 +214,10 @@ export default function Home() {
         />
 
         <div
+          className="hero-inner"
           style={{
             maxWidth: 1152,
             margin: "0 auto",
-            padding: "56px 32px 80px",
           }}
         >
           <div style={{ maxWidth: 760 }}>
@@ -427,9 +427,10 @@ export default function Home() {
       {/* ── SERVICES ─────────────────────────────────────────── */}
       <section
         id="services"
-        style={{ backgroundColor: "#f8fafc", padding: "88px 0 104px" }}
+        className="section-py"
+        style={{ backgroundColor: "#f8fafc" }}
       >
-        <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 32px" }}>
+        <div className="page-container" style={{ maxWidth: 1024 }}>
           {/* Header */}
           <div style={{ marginBottom: 40 }}>
             <p
@@ -508,11 +509,11 @@ export default function Home() {
 
           {/* Active card */}
           <div
+            className="service-card"
             style={{
               border: "1px solid #E5E7EB",
               backgroundColor: "#ffffff",
               borderRadius: 20,
-              padding: "40px 44px",
               boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
             }}
           >
@@ -564,12 +565,10 @@ export default function Home() {
               {s.description}
             </p>
 
-            {/* Details grid — 2 columns */}
+            {/* Details grid — 1 col mobile, 2 cols desktop */}
             <ul
+              className="service-details"
               style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "10px 32px",
                 marginBottom: 32,
               }}
             >
@@ -635,14 +634,13 @@ export default function Home() {
       {/* ── ABOUT ────────────────────────────────────────────── */}
       <section
         id="about"
-        style={{ backgroundColor: "#f8fafc", padding: "88px 0 104px" }}
+        className="section-py"
+        style={{ backgroundColor: "#f8fafc" }}
       >
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+        <div className="page-container">
           <div
+            className="about-grid"
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
-              gap: 64,
               alignItems: "center",
             }}
           >
@@ -926,9 +924,10 @@ export default function Home() {
 
       <section
         id="deinosti"
-        style={{ backgroundColor: "#ffffff", padding: "88px 0 104px" }}
+        className="section-py"
+        style={{ backgroundColor: "#ffffff" }}
       >
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+        <div className="page-container">
           {/* Header */}
           <div style={{ marginBottom: 48 }}>
             <h2
@@ -1104,9 +1103,10 @@ export default function Home() {
       {/* ── ПАРТНЬОРИ ────────────────────────────────────────── */}
       <section
         id="partnori"
-        style={{ backgroundColor: "#f8fafc", padding: "72px 0 88px" }}
+        className="section-py"
+        style={{ backgroundColor: "#f8fafc" }}
       >
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+        <div className="page-container">
           {/* Header */}
           <div style={{ marginBottom: 40 }}>
             <h2
@@ -1229,11 +1229,10 @@ export default function Home() {
         return (
           <section
             id="obyavleniya"
-            style={{ backgroundColor: "#f8fafc", padding: "88px 0 104px" }}
+            className="section-py"
+            style={{ backgroundColor: "#f8fafc" }}
           >
-            <div
-              style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}
-            >
+            <div className="page-container">
               {/* Header */}
               <p
                 style={{
@@ -1414,16 +1413,7 @@ export default function Home() {
               </div>
 
               {/* Cards grid */}
-              <ul
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(440px, 1fr))",
-                  gap: 16,
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                }}
-              >
+              <ul className="obyavleniya-grid">
                 {filtered.map((o, i) => (
                   <li key={i}>
                     <article
@@ -1607,9 +1597,10 @@ export default function Home() {
       {/* ── ЧЗВ ─────────────────────────────────────────────── */}
       <section
         id="chzv"
-        style={{ backgroundColor: "#f0f4f1", padding: "88px 0 104px" }}
+        className="section-py"
+        style={{ backgroundColor: "#f0f4f1" }}
       >
-        <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 32px" }}>
+        <div className="page-container" style={{ maxWidth: 800 }}>
           {/* Header */}
           <p
             style={{
@@ -1738,9 +1729,10 @@ export default function Home() {
       {/* ── КОНТАКТИ ─────────────────────────────────────────── */}
       <section
         id="contact"
-        style={{ backgroundColor: "#f8fafc", padding: "88px 0 104px" }}
+        className="section-py"
+        style={{ backgroundColor: "#f8fafc" }}
       >
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+        <div className="page-container">
           {/* Header */}
           <p
             style={{
@@ -1785,21 +1777,13 @@ export default function Home() {
 
           {/* Main grid: left cards + right map */}
           <div
+            className="contact-grid"
             style={{
-              display: "grid",
-              gridTemplateColumns: "minmax(0,1fr) 380px",
-              gap: 32,
               alignItems: "start",
             }}
           >
             {/* Left — cards */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 16,
-              }}
-            >
+            <div className="contact-cards">
               {/* Phone card — spans full width */}
               <div
                 style={{
@@ -2084,13 +2068,12 @@ export default function Home() {
 
             {/* Right — map */}
             <div
+              className="contact-map"
               style={{
                 borderRadius: 16,
                 overflow: "hidden",
                 border: "1px solid #E5E7EB",
                 boxShadow: "0 2px 12px rgba(0,0,0,0.07)",
-                height: "100%",
-                minHeight: 420,
               }}
             >
               <iframe
@@ -2099,7 +2082,6 @@ export default function Home() {
                 style={{
                   width: "100%",
                   height: "100%",
-                  minHeight: 420,
                   border: 0,
                   display: "block",
                 }}

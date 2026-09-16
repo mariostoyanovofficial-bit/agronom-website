@@ -70,14 +70,8 @@ export default function ObyavleniyaPage() {
 
   return (
     <MainLayout>
-      <div
-        style={{
-          backgroundColor: "#f8fafc",
-          minHeight: "100vh",
-          padding: "72px 0 104px",
-        }}
-      >
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+      <div className="page-shell">
+        <div className="page-container">
           {/* Breadcrumb */}
           <nav
             style={{
@@ -146,15 +140,7 @@ export default function ObyavleniyaPage() {
           </p>
 
           {/* Filters row */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr auto auto",
-              gap: 12,
-              marginBottom: 36,
-              alignItems: "center",
-            }}
-          >
+          <div className="obyavleniya-filters" style={{ marginBottom: 36 }}>
             {/* Search */}
             <div style={{ position: "relative" }}>
               <svg
@@ -204,13 +190,13 @@ export default function ObyavleniyaPage() {
             {/* Type dropdown */}
             <div style={{ position: "relative" }}>
               <button
+                className="filter-select filter-select-type"
                 onClick={() => {
                   setTypeDropdownOpen((v) => !v);
                   setYearDropdownOpen(false);
                 }}
                 style={{
                   height: 48,
-                  minWidth: 200,
                   paddingLeft: 16,
                   paddingRight: 12,
                   border: "1px solid #E5E7EB",
@@ -289,13 +275,13 @@ export default function ObyavleniyaPage() {
             {/* Year dropdown */}
             <div style={{ position: "relative" }}>
               <button
+                className="filter-select filter-select-year"
                 onClick={() => {
                   setYearDropdownOpen((v) => !v);
                   setTypeDropdownOpen(false);
                 }}
                 style={{
                   height: 48,
-                  minWidth: 160,
                   paddingLeft: 16,
                   paddingRight: 12,
                   border: "1px solid #E5E7EB",
@@ -383,16 +369,7 @@ export default function ObyavleniyaPage() {
 
           {/* Cards grid */}
           {filtered.length > 0 ? (
-            <ul
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(440px, 1fr))",
-                gap: 16,
-                listStyle: "none",
-                padding: 0,
-                margin: 0,
-              }}
-            >
+            <ul className="obyavleniya-grid">
               {filtered.map((o, i) => (
                 <li key={i}>
                   <article

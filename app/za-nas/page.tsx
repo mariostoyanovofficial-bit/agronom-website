@@ -195,12 +195,17 @@ export default function ZaNasPage() {
   return (
     <MainLayout>
       {/* ── Breadcrumb ───────────────────────────────────────── */}
-      <div style={{ backgroundColor: "#f8fafc", borderBottom: "1px solid #e5e7eb" }}>
+      <div
+        style={{
+          backgroundColor: "#f8fafc",
+          borderBottom: "1px solid #e5e7eb",
+        }}
+      >
         <div
+          className="page-container"
           style={{
-            maxWidth: 1152,
-            margin: "0 auto",
-            padding: "16px 32px",
+            paddingTop: 16,
+            paddingBottom: 16,
             fontSize: 14,
             color: "#6B7280",
           }}
@@ -216,10 +221,10 @@ export default function ZaNasPage() {
       {/* ── HERO / Intro ─────────────────────────────────────── */}
       <section style={{ backgroundColor: GREEN, color: "#ffffff" }}>
         <div
+          className="page-container"
           style={{
-            maxWidth: 1152,
-            margin: "0 auto",
-            padding: "64px 32px 72px",
+            paddingTop: "clamp(44px, 7vw, 64px)",
+            paddingBottom: "clamp(48px, 8vw, 72px)",
           }}
         >
           <p
@@ -262,8 +267,13 @@ export default function ZaNasPage() {
       </section>
 
       {/* ── Кои сме ние ──────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#ffffff", padding: "72px 0" }}>
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+      <section
+        style={{
+          backgroundColor: "#ffffff",
+          padding: "clamp(44px, 8vw, 72px) 0",
+        }}
+      >
+        <div className="page-container">
           <h2
             style={{
               fontSize: "clamp(1.7rem, 3vw, 2.3rem)",
@@ -275,25 +285,57 @@ export default function ZaNasPage() {
           >
             Кои сме ние?
           </h2>
-          <div style={{ maxWidth: 820, display: "flex", flexDirection: "column", gap: 18 }}>
-            <p style={{ fontSize: "1.05rem", color: "#4B5563", lineHeight: 1.8, margin: 0 }}>
+          <div
+            style={{
+              maxWidth: 820,
+              display: "flex",
+              flexDirection: "column",
+              gap: 18,
+            }}
+          >
+            <p
+              style={{
+                fontSize: "1.05rem",
+                color: "#4B5563",
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
               „Зелени проекти консулт“ ЕООД е специализирана консултантска
               компания с богат опит в областта на екологичното законодателство,
               устойчивото развитие и управлението на екологични ангажименти на
               фирми и организации.
             </p>
-            <p style={{ fontSize: "1.05rem", color: "#4B5563", lineHeight: 1.8, margin: 0 }}>
+            <p
+              style={{
+                fontSize: "1.05rem",
+                color: "#4B5563",
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
               Работим с частни и публични клиенти в цялата страна, като
               предлагаме пълна експертна подкрепа – от административни процедури
               до реализация на зелени енергийни проекти.
             </p>
-            <p style={{ fontSize: "1.05rem", color: "#4B5563", lineHeight: 1.8, margin: 0 }}>
+            <p
+              style={{
+                fontSize: "1.05rem",
+                color: "#4B5563",
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
               Много силни и утвърдени компании вече ни се довериха, като избраха
               нашия професионализъм и ангажираност към детайла. Можете да ги
               видите в страницата{" "}
               <a
                 href="/partnori"
-                style={{ color: GREEN, fontWeight: 600, textDecoration: "none" }}
+                style={{
+                  color: GREEN,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                }}
               >
                 „Компаниите, които ни се довериха“
               </a>
@@ -304,8 +346,13 @@ export default function ZaNasPage() {
       </section>
 
       {/* ── Нашите основни услуги ────────────────────────────── */}
-      <section style={{ backgroundColor: "#f8fafc", padding: "72px 0" }}>
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+      <section
+        style={{
+          backgroundColor: "#f8fafc",
+          padding: "clamp(44px, 8vw, 72px) 0",
+        }}
+      >
+        <div className="page-container">
           <h2
             style={{
               fontSize: "clamp(1.7rem, 3vw, 2.3rem)",
@@ -359,7 +406,16 @@ export default function ZaNasPage() {
                 >
                   {b.title}
                 </h3>
-                <ul style={{ display: "flex", flexDirection: "column", gap: 10, listStyle: "none", padding: 0, margin: 0 }}>
+                <ul
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 10,
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                  }}
+                >
                   {b.items.map((it, j) => (
                     <li
                       key={j}
@@ -398,8 +454,13 @@ export default function ZaNasPage() {
       </section>
 
       {/* ── Защо да изберете нас ─────────────────────────────── */}
-      <section style={{ backgroundColor: "#ffffff", padding: "72px 0" }}>
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+      <section
+        style={{
+          backgroundColor: "#ffffff",
+          padding: "clamp(44px, 8vw, 72px) 0",
+        }}
+      >
+        <div className="page-container">
           <h2
             style={{
               fontSize: "clamp(1.7rem, 3vw, 2.3rem)",
@@ -464,16 +525,21 @@ export default function ZaNasPage() {
       </section>
 
       {/* ── Свържете се с нас ────────────────────────────────── */}
-      <section style={{ backgroundColor: "#f8fafc", padding: "64px 0" }}>
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+      <section
+        style={{
+          backgroundColor: "#f8fafc",
+          padding: "clamp(40px, 7vw, 64px) 0",
+        }}
+      >
+        <div className="page-container">
           <div
             style={{
               backgroundColor: GREEN,
               borderRadius: 20,
-              padding: "40px 44px",
+              padding: "clamp(24px, 5vw, 40px) clamp(20px, 5vw, 44px)",
               display: "flex",
               flexWrap: "wrap",
-              gap: 32,
+              gap: 24,
               alignItems: "center",
               justifyContent: "space-between",
             }}
@@ -568,8 +634,13 @@ export default function ZaNasPage() {
       </section>
 
       {/* ── Референции и препоръки ───────────────────────────── */}
-      <section style={{ backgroundColor: "#ffffff", padding: "72px 0" }}>
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+      <section
+        style={{
+          backgroundColor: "#ffffff",
+          padding: "clamp(44px, 8vw, 72px) 0",
+        }}
+      >
+        <div className="page-container">
           <p
             style={{
               fontSize: 12,
@@ -634,8 +705,13 @@ export default function ZaNasPage() {
       </section>
 
       {/* ── Галерия / офис ───────────────────────────────────── */}
-      <section style={{ backgroundColor: "#f8fafc", padding: "0 0 80px" }}>
-        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 32px" }}>
+      <section
+        style={{
+          backgroundColor: "#f8fafc",
+          padding: "0 0 clamp(52px, 9vw, 80px)",
+        }}
+      >
+        <div className="page-container">
           <div
             style={{
               display: "grid",

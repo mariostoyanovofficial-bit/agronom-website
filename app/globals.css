@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --font-inter: var(--font-inter, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+  --font-inter: var(
+    --font-inter,
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif
+  );
 }
 
 @theme inline {
@@ -17,7 +24,9 @@
   --color-agro-accent: #95d5b2;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -28,14 +37,25 @@ html {
 body {
   background: #ffffff;
   color: #0f172a;
-  font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    var(--font-inter),
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Reset heading defaults — all sizing is done via inline styles in components */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
 }
@@ -43,4 +63,189 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
   transition: opacity 0.15s ease;
+}
+
+/* ── Mobile-first responsive helpers ───────────────────────── */
+
+/* Prevent horizontal overflow WITHOUT breaking position: sticky.
+   overflow-x:hidden on <html> makes it a scroll container and breaks the
+   sticky header, so clip on <body> only and leave <html> as scroll root. */
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Inner page container: fluid horizontal padding (16px phone → 32px desktop) */
+.page-container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding-left: clamp(16px, 5vw, 32px);
+  padding-right: clamp(16px, 5vw, 32px);
+}
+
+/* Inner page vertical rhythm (smaller on phones) */
+.page-shell {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding-top: clamp(32px, 6vw, 72px);
+  padding-bottom: clamp(48px, 9vw, 104px);
+}
+
+/* Usluga detail: content + sidebar. Stacks on mobile, 2-col from lg. */
+.usluga-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (min-width: 1024px) {
+  .usluga-layout {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 48px;
+  }
+}
+/* Sidebar becomes sticky only on desktop */
+.usluga-aside {
+  position: static;
+}
+@media (min-width: 1024px) {
+  .usluga-aside {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+/* Obyavleniya filters: stack on mobile, row from md */
+.obyavleniya-filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+@media (min-width: 768px) {
+  .obyavleniya-filters {
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+  }
+}
+/* Filter dropdown buttons: full width on mobile, fixed min-width from md */
+.filter-select {
+  width: 100%;
+  min-width: 0;
+}
+@media (min-width: 768px) {
+  .filter-select-type {
+    min-width: 200px;
+    width: auto;
+  }
+  .filter-select-year {
+    min-width: 160px;
+    width: auto;
+  }
+}
+
+/* Obyavleniya cards: 1 col on mobile, auto-fill wider cards from sm */
+.obyavleniya-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 700px) {
+  .obyavleniya-grid {
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  }
+}
+
+/* Partnori logo grid: 2 cols on phones, auto-fill from sm */
+.partnori-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 640px) {
+  .partnori-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Generic responsive section vertical padding */
+.section-py {
+  padding-top: clamp(48px, 8vw, 88px);
+  padding-bottom: clamp(56px, 9vw, 104px);
+}
+
+/* Home hero inner padding */
+.hero-inner {
+  padding: clamp(36px, 6vw, 56px) clamp(16px, 5vw, 32px) clamp(52px, 8vw, 80px);
+}
+
+/* Home services active card padding */
+.service-card {
+  padding: clamp(24px, 5vw, 40px) clamp(20px, 5vw, 44px);
+}
+/* Service details list: 1 col on mobile, 2 cols from sm */
+.service-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+@media (min-width: 640px) {
+  .service-details {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 32px;
+  }
+}
+
+/* Home about section grid: stack on mobile, 2-col from lg */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px;
+  }
+}
+
+/* Home contacts: stack on mobile, cards + map from lg */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr) 380px;
+  }
+}
+/* Contact cards inner grid: single col on small phones, 2-col from sm */
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 480px) {
+  .contact-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Contacts map: fixed height on mobile (no overlap), stretch to card height on desktop */
+.contact-map {
+  height: 320px;
+}
+@media (min-width: 1024px) {
+  .contact-map {
+    height: 100%;
+    min-height: 420px;
+  }
 }
