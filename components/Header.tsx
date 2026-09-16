@@ -61,11 +61,11 @@ export default function Header() {
         },
       ],
     },
-    { label: "Дейности", href: "#deinosti" },
+    { label: "Дейности", href: "/#deinosti" },
     { label: "Партньори", href: "/partnori" },
-    { label: "Обявления", href: "#obyavleniya" },
-    { label: "ЧЗВ", href: "#chzv" },
-    { label: "Контакти", href: "#contact" },
+    { label: "Обявления", href: "/#obyavleniya" },
+    { label: "ЧЗВ", href: "/#chzv" },
+    { label: "Контакти", href: "/#contact" },
   ];
 
   return (

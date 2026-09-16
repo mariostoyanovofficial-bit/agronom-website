@@ -57,7 +57,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li>
                 <a
-                  href="#services"
+                  href="/#services"
                   className="transition-colors hover:text-agro-accent"
                 >
                   Екологични оценки и ОВОС
@@ -65,7 +65,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="/#services"
                   className="transition-colors hover:text-agro-accent"
                 >
                   Комплексни разрешителни (КР)
@@ -73,7 +73,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="/#services"
                   className="transition-colors hover:text-agro-accent"
                 >
                   Управление на отпадъците и НИСО
@@ -81,7 +81,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="/#services"
                   className="transition-colors hover:text-agro-accent"
                 >
                   Екологичен мониторинг и фактори на средата
@@ -89,7 +89,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="/#services"
                   className="transition-colors hover:text-agro-accent"
                 >
                   Проектантски услуги и ЗУТ
@@ -193,7 +193,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#news"
+                  href="/#obyavleniya"
                   className="underline underline-offset-4 hover:text-agro-accent"
                 >
                   Всички обявления
